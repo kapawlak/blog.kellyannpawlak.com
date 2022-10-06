@@ -952,19 +952,22 @@ min-width: 7rem!important;
 
 body {
     font-size: 1.1rem;
-    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.05)), url("../assets/img/main/background.jpg");
-    background-size: 150px;
-    background-color: rgb(0, 0, 0);
+    
+    background-color: rgb(209, 209, 209);
+    background: linear-gradient(rgba(255, 255, 255, 0.759), rgba(239, 239, 239, 0.905)), url("../assets/img/main/honey.jpg");
     background-attachment:fixed;
-  
-      counter-reset: foot;  
+    background-size: 150px;
+    counter-reset: foot;  
    font-style: roman;
   }
   
   .allcontent{
     max-width: 1600px;
-    border-right: 1px var(--bs-light) solid ;
+    border-right: 1.5px var(--bs-light) solid ;
+    background: linear-gradient(rgba(255, 255, 255, 0.459), rgba(239, 239, 239, 0.705)), url("../assets/img/main/background.jpg");
+    //
     background-color: rgba(256, 256, 256, 0.98);
+    background-attachment:fixed;
     font-size: 1.2rem;
     line-height: 1.5;
     overflow: hidden;

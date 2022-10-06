@@ -1,6 +1,9 @@
 </p><img src='static/assets/img/main/splashbanner.jpg' width="100%" style='text-indent:none' title="An actual, unedited view, from my recent trip to montana" class="NoShow"></img><p>
 
 
+# About Me
+
+I am a Quantum Application Scientist working in the Quantum Industry. 
 
 # News
 
