@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Lost Entropy Blog
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Personal Blog of Dr. Kelly Ann Pawlak">
+  <meta name="author" content="site: Kelly Ann Pawlak, Ph.D.">
+  <meta name="generator" content="Hugo 0.84.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/assets/img/favicon/site.webmanifest">
+
+
+  <!-- Core Markdown Rendering -->
+  <script src="static/scripts/markdown-it.min.js"></script>
+  <script src="static/scripts/markdown-it-container.min.js"></script>
+
+  <!-- MD Render Loop -->
+  <script src="static/scripts/markdown-render.js"></script>
+  <script src="static/scripts/markdown-containers.js"></script>
+
+  <!-- The loading of KaTeX -->
+  <script src="static/scripts/katex.min.js"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script src="static/scripts/auto-render.min.js"></script>
+
+  <!-- Symbol to Style Loop -->
+  <script src="static/scripts/style-render.js"></script>
+
+  <!-- TOC -->
+  <script src="static/scripts/table-of-contents.js"></script>
+  <!--Data Viewer-->
+  <script src="static/scripts/navigation.js"></script>
+  <script src="static/scripts/dashboard.js"></script>
+
+  <!--Brand Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+  <link rel="stylesheet" href='static/assets/fonts/roboto.css'>
+  <link rel="stylesheet" href='static/assets/fonts/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href='static/css/katex.min.css'>
+  <link rel="stylesheet" href='static/css/custom.css'>
+
+
+  <link rel="shortcut icon" href="#">
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+
+
+    <!-- IMAGE Modal -->
+    <div class="modal fade " id="imgModal" tabindex="-1" aria-labelledby="img-info-modal" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center" id="img-modal-body">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <button class="navbar-toggler  d-lg-none collapsed p-0  bg-light rounded-2" id="sidebar-button" type="button" data-bs-target="#sidebarMenu"
+    aria-controls="sidebarMenu" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation" 
+    style="
+    width: 20px; 
+    position: fixed;
+    left: 0px;">
+    <i class="bi bi-arrow-bar-right"></i>
+   </button>
+    <div class="row content">
+      
+      <nav id="sidebarMenu" class=" container-sm  d-md-block bg-light sidebar offcanvas-collapse text-center py-0"
+        style=" bottom:0px; overflow-x:visible;  ">
+
+        <button class="navbar-toggler  d-lg-none collapsed p-0 text-right  bg-light rounded-2" id="sidebar-button2" type="button" data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation" 
+        style="
+        width: 20px; 
+        position: relative;
+        left: 100px;">
+        <i class="bi bi-arrow-bar-left"></i>
+       </button>
+       <br>
+
+        <h4>Lost Entropy</h4>
+        <img src="static/assets/img/main/QQ.jpg" class="rounded-circle NoClick" width="80%" style="padding: 20px;"></img>
+
+        <ul class=" list-group-flush list-group text-center" style="width: 100%;">
+          <li>
+            <a class="list-group-item" href="?linkfile=Home">
+              <i class="bi bi-house-fill"></i> 
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="list-group-item" href="https://www.kellyannpawlak.com">
+              <i class="bi bi-globe"></i> 
+              Web
+            </a>
+          </li>
+          <li>
+            <a class="list-group-item" href="?linkfile=index">
+              <i class="bi bi-journal"></i> 
+              All Posts
+            </a>
+          </li>
+          <li >
+            <div class="list-group-item">
+            <a href="https://twitter.com/QuantumQelly"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/kellyannpawlak/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://scholar.google.com/citations?user=NFzO_FUAAAAJ&hl=en"><i class="bi bi-mortarboard-fill"></i></a>
+            <a href="https://github.com/kapawlak"><i class="bi bi-github"></i></a>
+            <a href="https://www.coldquanta.com"><i class="bi bi-briefcase-fill"></i></a>
+          </div>
+          </li>
+        </ul>
+
+<br>
+          Select Blog Post
+
+        <div class="dropdown  p-3">
+          <button class="btn btn-secondary dropdown-toggle btn-nav" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-month">
+            Select Month
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark"  id='MonthList'>
+          </ul>
+        </div>
+
+        <div class="dropdown p-3 dropend">
+          <button class="btn btn-secondary dropdown-toggle btn-nav" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-title">
+            Select Post
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark"  id='TitleList' style="z-index: 1000;max-height: fit-content;overflow-y: scroll;">
+            <li><p class="dropdown-item"> Select a Month </p></li>
+          </ul>
+        </div>
+
+        
+
+      </nav>
+      <!-- ----------------------------------------------------------------- -->
+      <!-- info Modal -->
+      <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="Staff-info-modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content fs-5">
+            <div class="modal-header text-center">
+              <h5 class="modal-title ">First Last</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center" id="info-modal-body" style="font-size: 1.1rem;">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------- MAIN------------------------------------------ -->
+      
+        
+          <main class=" allcontent nav-buffer">
+          <div data-toc id="maincontent" style="padding-left:auto; min-height:100vh;">
+            <span class='text-center' style='font-size: 2rem;'>Loading...</span>
+            <div class="spinner-border spinner-border-lg position-absolute top-50 start-50  " role="status">
+              <span class="visually-hidden ">Loading...</span>
+            </div>
+
+          </div>
+
+          <footer class='text-center m-0'> <small class="muted" id='copyright'></small></footer>
+        </main>
+        
+       
+    </div>
+    
+  </div>
+  
+</body>
+
+</html>
+
+<script src="static/scripts/render_nav_and_modals.js"></script>
+<script src="static/scripts/startup.js"></script>
+<script src="static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="static/scripts/Chart.min.js"
+  integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
