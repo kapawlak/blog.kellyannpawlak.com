@@ -1,0 +1,1251 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+
+$CQ-blue: #3399FF;
+$CQ-orange: #FF9933;
+$CQ-aqua: #04859B;
+$CQ-moss: #7A8D39;
+$CQ-seagreen: #0BA89A;
+$CQ-coral: #EF5645;
+$CQ-mist: #9CBEBE;
+$CQ-clay: #DCD6CC;
+$CQ-sandstone: #C9BF9D;
+$CQ-lightgray: #DCE1E5;
+$caution:tint-color($CQ-orange,70%);
+
+@font-face {
+    font-family: Anon;
+    src: url(/static/assets/fonts/AnonymousPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: Assistant;
+    src: url(/static/assets/fonts/Assistant/Assistant-VariableFont_wght.ttf);
+}
+
+
+$light : tint-color($CQ-lightgray,80%);
+$dark: black;
+$component-active-bg: $CQ-aqua;
+
+$pre-color : $dark;
+
+$input-btn-focus-width: 0.1rem;
+$card-cap-bg:                       rgba(black, .15) !default;
+
+
+$custom-colors: (
+  "CQ-blue": #3399FF,
+  "CQ-orange": #FF9933,
+  "CQ-aqua": #04859B,
+  "CQ-moss": #7A8D39,
+  "CQ-seagreen": #0BA89A,
+  "CQ-coral": #EF5645,
+  "CQ-mist": #9CBEBE,
+  "CQ-clay": #DCD6CC,
+  "CQ-sandstone": #C9BF9D,
+  "CQ-lightgray": #DCE1E5,
+  "black": black,
+  "caution": tint-color($CQ-orange,70%)
+);
+
+$utilities: (
+  "opacity": (
+    property: opacity,
+    values: (
+      0: 0,
+      25: .25,
+      50: .5,
+      75: .75,
+      100: 1,
+    )
+  )
+ );
+
+// SPACER
+
+$dropdown-divider-margin-y:         0px ;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+ 
+
+
+$font-family-sans-serif:      Assistant, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       Anon, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-weight-base:            280;
+
+
+$accordion-padding-y:                     0.75rem;
+$accordion-padding-x:                     1rem;
+$accordion-color:                         $body-color;
+$accordion-bg:                            $body-bg;
+$accordion-border-width:                  $border-width;
+$accordion-border-color:                  rgba($black, .125);
+$accordion-border-radius:                 0 px;
+$accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width);
+
+$accordion-body-padding-y:                $accordion-padding-y;
+$accordion-body-padding-x:                $accordion-padding-x;
+
+$accordion-button-padding-y:              $accordion-padding-y;
+$accordion-button-padding-x:              $accordion-padding-x;
+$accordion-button-color:                  $accordion-color;
+$accordion-button-bg:                     $accordion-bg;
+$accordion-transition:                    $btn-transition, border-radius .15s ease;
+$accordion-button-active-bg:              $CQ-lightgray;
+$accordion-button-active-color:           shade-color($primary, 10%);
+
+$accordion-button-focus-border-color:     $input-focus-border-color;
+$accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
+
+$accordion-icon-width:                    1.25rem;
+$accordion-icon-color:                    $accordion-color;
+$accordion-icon-active-color:             $accordion-button-active-color;
+$accordion-icon-transition:               transform .2s ease-in-out;
+$accordion-icon-transform:                rotate(-180deg);
+
+$card-border-radius:                        0px!important;
+$card-inner-border-radius:                  0px!important;
+$card-cap-padding-y:                        0;
+$card-border-width:                         0px;
+
+
+
+pre {
+    border: $accordion-border-color $border-width solid;
+    
+    margin: auto;
+    background-color: $CQ-lightgray;
+    padding: 5px;
+    white-space: pre-wrap; 
+  };
+
+code{
+    background-color: $CQ-lightgray;
+    color: $dark;
+    word-wrap: break-word;
+}
+
+@media (min-width: map-get($grid-breakpoints, "sm" )){ 
+    pre{
+    max-width: 70%;
+    }
+}
+
+
+.card{
+    .card-header,.card-footer{
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+    box-shadow: 1px 1px 5px 2px $CQ-lightgray;
+    .katex{
+        font-size: 1.3rem
+    }
+}
+
+// 4. Include any optional Bootstrap components as you like
+@import "../bootstrap/scss/root";
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/images";
+@import "../bootstrap/scss/containers";
+@import "../bootstrap/scss/grid";
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 5. Add additional custom code here
+@import "../bootstrap/scss/bootstrap";
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////// 
+//ACC Modify
+
+#navcordion ul li a{
+ padding-left:30px;
+ margin-bottom: -1px;
+ background-color: $light;
+}
+
+
+
+.ac-top, .ac-top:focus, .ac-top:active{
+    background-color: $dark;
+    color: $light;
+    
+}
+
+.ac-top:not(.collapsed){
+    background-color: $dark;
+    //color: $CQ-orange;
+    color:white;
+}
+
+
+.ac-top::after, .ac-top.ac-top:not(.collapsed)::after{
+    background-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+.ac-heads{
+    font-size: 1.1rem;  
+    background-color: tint-color($CQ-lightgray,10%); 
+    
+    span{
+        color:$dark
+    }
+    box-shadow: none!important;
+}
+
+.ac-heads:active,.ac-heads:focus{
+    color:$dark;
+}
+
+
+.ac-min, .ac-min:active{
+    background-color: white;
+    border-bottom: 1px solid $light ;
+    font-size: smaller;
+    background-color: tint-color($CQ-lightgray,50%);
+
+}
+.ac-min:hover{
+    background-color: shade-color(tint-color($CQ-orange,90%),10%);
+    border-bottom: 1px solid $light ;
+
+}
+
+.ac-min> ul > li >a{
+    padding-left: 1px;
+}
+.ac-list > a:hover{
+    background-color: shade-color(tint-color($CQ-orange,90%),5%)!important;
+}
+
+
+
+/////////////////////////////////////////////////////////////////// 
+//CONTAINERS
+
+$materials-bg: shade-color($CQ-mist,5%);
+$definition-bg: tint-color($dark,95%);
+$figure-bg: rgba($white, .3);
+$figure-hf-bg:rgba($dark, .9);
+
+$hider-bg:  $CQ-moss;
+$Activity-bg: shade-color(tint-color($CQ-coral,20%),30%);
+$eqn-bg: tint-color($dark,85%);
+$Instruction-header-bg:shade-color($CQ-seagreen,10%);
+$intro-bg: rgba($dark,0.85);
+$simulation-bg:$CQ-mist;
+$header-font-family: $font-family-sans-serif;
+
+
+//def
+.card-but{
+    font-size: 1.5rem!important;
+}
+
+///Intro/////////////////////////////
+.Intro{
+    background-color: white;
+    color:$dark;
+    font-size: 1.2rem!important;
+
+    ol, ul{
+        text-align: left
+    }
+
+    > .card-header{
+     color:white;
+     background-color: $intro-bg;
+     font-family: $header-font-family;
+    }
+ };
+
+
+ .Summary{
+
+    background-color: tint-color($intro-bg,80%);
+    > .card-header{
+        color:white;
+        background-color: $intro-bg
+       }
+
+       ol> li, ul> li{
+        text-align: left
+    }
+ }
+
+
+
+
+ .Definition{
+    background-color: $definition-bg;
+    color:$dark;
+    font-size: 1.1rem!important;
+    ul{
+        font-size: 95%;
+    };
+
+    .card-header{
+        background-color: tint-color($CQ-orange,50%);
+    }
+    .card-body{
+        font-size: 1rem
+    }
+    clear: none !important;
+    .katex{
+        font-size: 1.15rem;
+    }
+ };
+
+ 
+
+///Hider////
+.Hider{
+    button{
+        border: 0px solid black;
+        width: 100%;
+        background-color:tint-color($hider-bg,75%);
+     };
+    button:active, button:focus{
+        border: 0px solid black;
+        width: 100%;
+        color:$dark;
+        background-color: tint-color($hider-bg,40%);
+        box-shadow: none!important;
+
+    };
+    button:not(.collapsed){
+        border: 0px solid black;
+        width: 100%;
+        color:$dark;
+        background-color: tint-color($hider-bg,30%)!important;
+     };
+
+    .card-but{
+        font-size: 1.3rem!important;
+        font-weight: normal;
+        padding-right:10px;   
+    }
+    p{
+        text-indent: 1rem}
+};
+
+///Hider////
+
+
+//Simulation
+.Simulation{
+    button{
+        border: 0px solid black;
+        width: 100%;
+        background-color:tint-color($simulation-bg,75%);
+        box-shadow: none!important;
+
+     };
+    button:active, button:focus{
+        border: 0px solid black;
+        width: 100%;
+        color:$dark;
+        background-color: tint-color($simulation-bg,40%);
+        box-shadow: none!important;
+
+    }; 
+    button:not(.collapsed){
+        border: 0px solid black;
+        width: 100%;
+        color:$dark;
+        background-color: tint-color($simulation-bg,100%)!important;
+     };
+
+    .card-but{
+        font-size: 1.3rem!important;
+        font-weight: normal;
+        padding-right:10px;   
+    }
+};
+
+
+///Equation
+.Equation{
+    background-color: $eqn-bg;
+    .card-footer{
+        color: black;
+        text-align: center;
+    }   
+}
+
+
+
+///
+.Contact, .Drop{
+    button:after{
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+
+    }
+    button:active:after,  button:focus:after{
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+
+    }
+}
+
+.col-card{
+    border-radius: 5px!important;
+    button{
+    border: 0px solid black;
+    width: 100%;
+    box-shadow: none!important;
+    border-radius: 0.25rem!important;
+
+    };
+    button:not(.collapsed){
+        border: 0px solid black;
+        border-bottom-left-radius: 0.0rem!important;
+        border-bottom-right-radius: 0.0rem!important;
+     };
+}
+///Activity
+.Activity {
+    border-radius: 5px!important;
+    > .accordion-item >  button{
+    border: 0px solid black;
+    width: 100%;
+    background-color:shade-color($Activity-bg,10%);
+    box-shadow: none!important;
+    border-radius: 0.25rem!important;
+    color: white;
+    };
+    > .accordion-item > button:after{
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+    }
+
+    > .accordion-item > button:active, .Activity button:focus{
+        border: 0px solid black;
+        width: 100%;
+        color:white;
+        background-color: tint-color($Activity-bg,5%);
+        box-shadow: none!important;
+        
+
+     };
+
+     > .accordion-item > button:not(.collapsed){
+        border: 0px solid black;
+        width: 100%;
+        color:white;
+        background-color: shade-color($Activity-bg,5%);
+        border-bottom-left-radius: 0.0rem!important;
+        border-bottom-right-radius: 0.0rem!important;
+     };
+     > .accordion-item > button:not(.collapsed):after{
+        background-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+     }
+    
+
+    .card-but{
+        font-size: 1.5rem;
+    }
+
+    ol li::marker{
+        font-weight: bold;
+    }
+
+    li ol{
+        list-style-type: lower-alpha;
+    
+    }
+
+
+}
+
+
+
+.badge-Activity{
+    background-color: $Activity-bg;
+    font-size: 1.3rem;
+}
+.badge-Activity:hover{
+    background-color: tint-color($Activity-bg,20%);
+
+}
+
+///Instruction
+
+
+.Instruction{
+    text-align: center;
+
+    > .accordion-item >  button{
+        border: 0px solid black;
+        width: 100%;
+        background-color:$dark;
+        box-shadow: none!important;
+        border-radius: 0.25rem!important;
+        color: white;
+        };
+   
+
+    ol, ul{
+        text-align: left;
+        li{
+            padding: 0.3rem 0px;
+        }
+        li::marker{
+            font-weight: bold;
+        }
+    }
+
+    ol{ 
+        list-style-type: lower-alpha!important;
+      }
+
+    img{
+        margin: auto;
+        text-align: center;
+    }
+
+    .card-footer{
+        font-size: 0.9rem;
+        background-color: $CQ-lightgray;
+    }
+
+}
+
+.Instruction.prelab{
+    .card-header{
+        background-color: $danger;
+        color:white;
+        border:0;
+    }
+}
+
+.badge-Instruction{
+    background-color: $Instruction-header-bg;
+    font-size: 1.3rem;
+}
+.badge-Instruction:hover{
+    background-color: tint-color($Instruction-header-bg,20%);
+
+}
+//Code
+.Code {
+
+    background-color: $white;
+    border:0px solid black;
+
+    
+
+    .card-body{
+        padding:0.5rem!important;
+        border-radius:$border-radius!important;
+        overflow-x: scroll;
+    }
+
+    p{
+        margin-bottom: 0!important;
+        font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+        font-weight: thin!important;
+        font-size: smaller!important;
+        color:rgba($dark, .9);
+        white-space: pre;
+        padding: 0 0.3rem 0 0.3rem; 
+        
+    }
+
+    
+}
+
+//Note
+
+.Note{
+    // transform:rotate(2deg);
+    // font-family: 'Comic Sans Ms', "Comic Sans", cursive;
+    font-size: 1rem;
+    color: shade-color($CQ-lightgray,70%);
+    text-indent: 0.25rem;
+    // i{
+    //     transform:rotate(45deg) translateY(-40px) ;
+    // }
+    .card-header{
+        border:none;
+        display: none;
+    }
+    .card-footer{
+        border:none;
+        display: none;
+    }
+    p{
+        margin: 0px;
+
+    }
+
+    ol > li, ul >li{
+        text-align: left;
+    }
+
+
+    background-color: tint-color($warning,80%);
+    border-left: 8px $warning solid!important;
+}
+
+.Warning{
+
+    font-family: 'Impact', 'Arial';
+    margin-top:50px;
+    
+
+    .card-header{
+        background-color: rgba($black, .0);
+        border:none;
+    }
+}
+///Figure//////////////////////////////
+ .Figure{
+    background-color: $figure-bg;
+    
+    text-align: center;
+    justify-content: center;
+    max-width: 95%;
+    .card-footer{
+        background-color: rgba($dark, .9);
+        font-family: $font-family-sans-serif;
+        color:$light;
+    }
+
+    img{
+        max-width: 100%;
+    }
+    ul, ol{ 
+        font-size:  0.85rem;
+        text-align: left
+    };
+
+    p{
+        margin: auto;
+        max-width:100%;
+        display: block;
+        overflow: hidden;
+        font-size: 0.85rem;
+        
+    }
+
+    .katex{
+        font-size: 100%!important
+    }
+
+ };
+
+h1, h2{
+    font-family: $font-family-monospace;
+
+}
+
+.toch1{
+    font-size: 1.5rem;
+}
+
+.toch2{
+    font-size: 1.2rem;
+}
+
+
+
+.xs, .s, .m, .l, .xl{
+    margin:auto;
+}
+
+ @media (min-width: map-get($grid-breakpoints, "lg" )){ 
+
+    .Note.float-lg-start{
+        margin:0rem 1.2rem 0rem 0rem!important
+      }
+      
+      
+    .Note.float-lg-end{
+    margin:0rem 0rem 0rem 1.2rem!important
+    }
+    .modal-body img{
+        max-height: calc(100vh - 180px);
+    }
+  
+    .Figure{
+        max-width:80%;
+    }
+    .xs.Figure:not(.rowfig), .xs img{
+        max-width:min(10rem, 100%);
+    }
+    .s.Figure:not(.rowfig), .s img{
+        max-width: min(15rem, 100%);
+        margin: auto;
+    }
+    .m.Figure:not(.rowfig), .m img{
+        max-width: min(20rem, 100%);
+        margin: auto;
+    }
+    .l.Figure:not(.rowfig), .l img{
+        max-width: min(25rem, 100%);
+        margin: auto;
+    }
+    .xl.Figure:not(.rowfig), .xl img {
+        max-width: min(40rem, 100%);
+        margin: auto;
+    }
+ }
+ .Figure img{
+    display: block;
+    margin: 10px auto;
+    clear: both;
+ }
+ .Figure:not(.rowfig) img{
+    max-width:100%;
+ }
+
+
+
+
+
+///Collapse/////////////////////////////
+
+
+
+////Specific
+#part0{
+    font-family:  $font-family-sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    direction: ltr /* rtl:ignore */;
+    unicode-bidi: bidi-override;
+    margin:  20px auto;
+    display: block;
+    text-align: center;
+    //text-decoration: underline;
+    font-size: 3rem;
+    border-bottom: 1px lightgrey solid
+}
+
+
+///Quick Hacks
+h5 > button{
+    box-shadow: none!important;
+}
+
+
+.row ul:not(.dropdown-menu){
+    // display: block;
+    margin-left:0px;
+}
+
+
+img:hover{
+    cursor: pointer;
+}
+
+
+
+  /* Tooltip container */
+.mytooltip {
+    position: static;
+    display: inline;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    cursor: pointer;
+  };
+  
+  .mytooltip sup::before{
+    counter-increment: foot;
+    content: '[' counter(foot) ;
+  };
+  
+  /* Tooltip text */
+  .mytooltip + .tooltiptext {
+  
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    max-width:100%;
+    /* Position the tooltip text */
+    position:fixed;
+    bottom: -500px;
+    transition: all 5s ease;
+    transition-delay: 8s;
+    border: black 8px solid;
+    text-indent: 0;
+    z-index: 1080;
+    display: block;
+    cursor: pointer;
+  };
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+   .mytooltip:active + .tooltiptext, .mytooltip:focus + .tooltiptext{
+    opacity: 1;
+    display: block;
+    bottom:5px;
+    transition: opacity 1s ease;
+    z-index:2;
+  };
+  
+
+  
+  .tooltiptext p{
+   background-color: black;
+  };
+
+
+ 
+  #maincontent{
+    > ul, > ol{
+        padding-left: 5rem;
+        overflow:hidden;
+        margin-right: 2rem
+        
+    }
+   
+
+  }
+
+
+.card-header p, .card-footer p, .card-header h5, .card-footer h5{
+    margin-bottom: 0px!important
+}
+
+
+
+.Table {
+    
+    .card-body{
+    overflow-x: scroll;
+    }
+    card-footer{
+        max-width: 100%;
+    }
+
+    td, th{
+        text-align: center;
+    }
+  }
+
+.card:not(.Note){
+overflow-x: hidden;
+// font-size: 2rem;
+}
+
+
+
+.Equation .card-body::-webkit-scrollbar-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  border-right: gray 1px;
+  /* or add it to the track */
+}
+
+ .Equation .card-body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: $eqn-bg;
+    /* or add it to the track */
+  }
+
+
+  .Table .card-body::-webkit-scrollbar-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  border-right: gray 1px;
+  /* or add it to the track */
+}
+
+.Table .card-body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    /* or add it to the track */
+  }
+
+
+.Quiz a:focus{
+    background-color: $CQ-orange;
+    border: 0px white solid;
+}
+
+
+
+.Quiz {
+    a{
+    width: 100%;
+    }
+    li, ol, ul{
+        border: 0px white solid;
+    }
+ 
+    .card-header{
+        background-color: $CQ-sandstone;
+
+            text-align: center!important;
+       
+    }
+    .quiz_ans{
+        font-size: 1rem;
+    }
+}
+
+.katex { font-size: 105%; }
+ 
+.Ops, .Data{
+    background-color: $figure-bg;
+    .card-header{
+        font-weight: 200;
+        background-color: tint-color($figure-hf-bg,10%);
+        color:white;
+    }
+    .card-footer{
+        font-weight: 200;
+        font-size: 75%;
+    }
+    table{
+        margin: 0;
+    }
+}
+
+
+.pronoun{
+    font-size: 0.7em;
+}
+
+
+body:not(.nav-link){
+    font-family: $font-family-sans-serif;
+}
+
+
+.hljs{
+    background-color: $white!important;
+}
+
+
+#run_menu{
+min-width: 7rem!important;
+}
+
+
+.exportbtn{
+    
+}
+
+
+body {
+    font-size: 1.1rem;
+    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.05)), url("../assets/img/main/background.jpg");
+    background-size: 150px;
+    background-color: rgb(0, 0, 0);
+    background-attachment:fixed;
+  
+      counter-reset: foot;  
+   font-style: roman;
+  }
+  
+  .allcontent{
+    max-width: 1600px;
+    border-right: 1px var(--bs-light) solid ;
+    background-color: rgba(256, 256, 256, 0.98);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+  
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  
+  
+  h2.accordion-header{
+    font-weight: bold;
+  }
+  
+  #maincontent> h1:not(#part0){
+    padding-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px lightgrey solid;
+  }
+  
+  #maincontent> h2{
+    padding-top: 40px;
+    margin-bottom: 20px;
+    color: var(--bs-gray-dark);
+    border-bottom: 1px lightgrey solid;
+  }
+  
+  #maincontent> h3{
+    color: var(--bs-gray-dark);
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    clear: none;
+    text-indent: 1rem;
+  }
+  
+  h1,h2, h6{
+    clear:both;
+    
+  }
+  
+  #maincontent> p{
+    text-indent: 1rem;
+    padding-left: 1rem;
+  }
+  
+  
+  
+  h2~ul, h3~ul{
+    margin-top:-10px!important;
+  }
+  
+  h1:not(#part0)~ul{
+    margin-top:-21px;
+    border-top:0px solid black;
+  
+  }
+  
+  .Intro .Materials{
+  
+    border: 0px black solid!important;
+  
+    background-color: rgba(0, 0, 0, .0);
+    margin:0px!important;
+  }
+  .Intro .Materials > li{
+  
+   padding-bottom: 5px;
+  }
+  
+  
+  @media (min-width: 992px) {
+    .nav-buffer {
+      padding-left: 210px !important;
+     
+    }
+    .navbar-nav{
+    margin-left: -360px;
+    }
+  
+  }
+  
+  .navbar-toggler:focus {
+   box-shadow: 0 !important;
+  }
+  
+  
+  
+  /*
+   * Sidebar
+   */
+  
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
+    right: 0;
+    */
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 44px 0 0; 
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  }
+  
+  .sidebar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #f0f0f0;
+    /* or add it to the track */
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb{
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+    border-right: gray 1px;
+    /* or add it to the track */
+  }
+  
+  .Equation .card-body{
+    overflow-x: scroll;
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+  }
+  
+  .sidebar .nav-link.active {
+    color: #2470dc;
+  }
+  
+  .sidebar .nav-link:hover .feather,
+  .sidebar .nav-link.active .feather {
+    color: inherit;
+  }
+  
+  .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  #sidebarMenu {
+    width: 200px;
+    font-family: $font-family-monospace;
+  }
+  
+  @media (max-width: 992px) {
+    #sidebarMenu {
+      left: -200px
+    }
+    .offcanvas-collapse {
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    visibility: hidden;
+    background-color: #343a40;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    }
+    .offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(100%); 
+    }
+   }
+  
+  .image_crop{
+    height:100%;
+    overflow: hidden;
+  }
+  
+  .image_crop img{
+    width:150px;
+    height:150px;
+   object-fit: cover!important;
+  }
+  
+  
+  .text-responsive:not(h5) {
+    font-size: calc(0.55rem + 0.6vw)!important;
+  }
+  
+  
+  h5.text-responsive{
+    font-size: calc(0.9rem + 0.6vw)!important;
+  }
+  
+  #Table-schedule td{
+    vertical-align:middle
+  }
+  
+  
+  .lvl2.accordion-button:not(.collapsed){
+    background-color: #c9c9c9!important;
+  }
+  
+  .lvl2.accordion-button{
+    padding-left: 2rem;
+    padding-top: 8px!important;
+    padding-bottom: 8px!important;
+  }
+  
+  .lvl3{
+    padding-left: 2.5rem;
+    padding-top: 4px!important;
+    padding-bottom: 4px!important;
+
+    // small{
+    //     font-size: 0.75rem;
+    // }
+  
+  }
+  
+
+  .Video {
+
+    background-color: tint-color($CQ-blue,50%);
+    border:0px solid black;
+    border-radius:$border-radius!important;
+    
+    .card-footer, .card-header{
+        background-color: $CQ-blue;
+        color:white;
+    }
+
+    .card-body{
+        padding:0!important;
+        border-radius:$border-radius!important;
+    }
+
+   
+}
+
+
+.sidenav{
+    position: fixed ;
+    width: 205px;
+    background-color: #3399FF;
+    overflow: show;
+}
+
+
+
+
+.btn-nav{
+    width: 100%;
+}
+
+
+footer{
+    position: relative;
+    background-color: tint-color(black,80%);
+
+}
+
+#copyright{
+    font-size: smaller;
+}
+
+
+

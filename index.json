@@ -1,0 +1,10 @@
+{
+  "page-links": {
+    "Home.md": "</p><img src='static/assets/img/main/splashbanner.jpg' width=\"100%\" style='text-indent:none' title=\"An actual, unedited view, from my recent trip to montana\" class=\"NoShow\"></img><p>",
+    "index.md": "Blog Index",
+    "Oct22": {
+      "05.md": "Study Session: Variational Fast Forwarding",
+      "09.md": "Under Construction: Notes Quantum Simulation"
+    }
+  }
+}
