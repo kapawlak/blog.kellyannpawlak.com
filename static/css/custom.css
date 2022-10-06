@@ -11525,4 +11525,8 @@ footer {
 #copyright {
   font-size: smaller; }
 
+.bi-question-square-fill {
+  font-size: 60%;
+  vertical-align: super; }
+
 /*# sourceMappingURL=custom.css.map */
