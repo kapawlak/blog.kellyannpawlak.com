@@ -145,7 +145,7 @@ infoModal.addEventListener('show.bs.modal', function (event) {
   var modalTitle = infoModal.querySelector('.modal-title')
   var modalBodyInput = infoModal.querySelector('.modal-body')
 
-  modalTitle.innerHTML = `Contact <span class='text-CQ-seagreen'>${recipient}</span>`
+  modalTitle.innerHTML = `Contact <span class='text-KP-seagreen'>${recipient}</span>`
 
   modalBodyInput.innerHTML = ''
   let color
@@ -242,7 +242,7 @@ function ListMembers(dictionary, groupdiv) {
       .appendChild(NewNode('div', ["dropdown-item", "text-center", "py-1"]))
       .appendChild(Object.assign(NewNode('div', ["col-sm-12", "nav-links", "lead"]), { innerHTML: `${member['first-name']} ${member['last-name']}` }))
       .parentNode
-      .appendChild(NewNode('div', ["row", "bg-CQ-lightgray", "p-1"]))
+      .appendChild(NewNode('div', ["row", "bg-KP-lightgray", "p-1"]))
       .appendChild(Object.assign(NewNode('a', ["col"]), { href: "mailto:${email}", innerHTML: `<i class="bi bi-envelope-fill px-1"></i>` }))
       .parentNode
       .appendChild(Object.assign(NewNode('button', ['btn', 'col', 'px-1', 'py-0']), { innerHTML: `<i class="bi bi-info-circle text-primary"></i></button>` }))

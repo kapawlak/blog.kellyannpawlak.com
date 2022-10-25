@@ -27,6 +27,8 @@ def WalkDir(dir: Path):
         for thing in this_level:
             if dir.joinpath(thing).is_dir():
                 curr[thing] = WalkDir(dir.joinpath(thing))
+            elif thing[0] == '_':
+                    pass
             else:
                 title=''
                 with open(Path(dir).joinpath(thing), "r") as file:

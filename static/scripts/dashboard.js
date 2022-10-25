@@ -274,11 +274,11 @@ function DisplayData(location) {
 
         var datacell = row_data.appendChild(NewNode('td', ['text-center']))
         if (i === j) {
-          datacell.classList.add("bg-CQ-lightgray")
+          datacell.classList.add("bg-KP-lightgray")
         } else {
           two_quibit_oplist.forEach((qq) => {
             if (cz_table[i][j] == null && cz_table[j][i] == null) {
-              datacell.classList.add("bg-CQ-lightgray")
+              datacell.classList.add("bg-KP-lightgray")
             } else {
               cell_values = (cz_table[i][j] || cz_table[j][i])
               datacell.innerHTML +=
@@ -434,7 +434,7 @@ function cardSummary() {
         <span class='badge bg-dark' style='cursor:pointer' onclick="copytoClipboard('${PAGESTATE['run-data']['runs'][0]['jobdata']['qobj_id']}')">
         qobj_id: ${PAGESTATE['run-data']['runs'][0]['jobdata']['qobj_id']}
         </span>
-        <span class='badge bg-CQ-orange' style='cursor:pointer' onclick="copytoClipboard('${Object.keys(PAGESTATE['run-data']['runs'][0]['jobdata']['backend_jobs'])[0]}')">
+        <span class='badge bg-KP-orange' style='cursor:pointer' onclick="copytoClipboard('${Object.keys(PAGESTATE['run-data']['runs'][0]['jobdata']['backend_jobs'])[0]}')">
         backend_job: ${Object.keys(PAGESTATE['run-data']['runs'][0]['jobdata']['backend_jobs'])[0]}
         </span>
         `))
@@ -449,7 +449,7 @@ function cardIdentity() {
   node.appendChild(DataCard('Identity'))
     .appendChild(NewNode('ul', ['list-group', 'list-group-flush', 'center']))
     .append(
-      ListItem(["list-group-item"], ` <div class="fw-bold">User:</div> ${PAGESTATE['run-data'].data['identity']['first']} ${PAGESTATE['run-data'].data['identity']['last']} <span class="badge bg-CQ-orange">${PAGESTATE['run-data'].data['identity']['title']}</span>`),
+      ListItem(["list-group-item"], ` <div class="fw-bold">User:</div> ${PAGESTATE['run-data'].data['identity']['first']} ${PAGESTATE['run-data'].data['identity']['last']} <span class="badge bg-KP-orange">${PAGESTATE['run-data'].data['identity']['title']}</span>`),
       ListItem(["list-group-item"], ` <div class="fw-bold">Organization:</div> ${PAGESTATE['run-data'].data['identity']['organization']}`),
       ListItem(["list-group-item"], ` <div class="fw-bold">Git:</div> ${PAGESTATE['run-data'].data['identity']['giturl']} `),
       ListItem(["list-group-item"], ` <div class="fw-bold">Version:</div> ${PAGESTATE['run-data'].data['versions']['qiskit-coldquanta']}/${PAGESTATE['run-data'].data['versions']['qexp']}`)

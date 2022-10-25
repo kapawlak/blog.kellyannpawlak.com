@@ -60,9 +60,13 @@ class Card{
     switch(type)
     {
       case 'Intro':
-        this.styleList.push(narrow_center, 'my-2')
+        this.styleList.push(narrow_center, 'my-2','col-lg-11')
         this.innerStyles[1]='text-center'
         break
+        case 'Quote':
+          this.styleList.push(narrow_center, 'my-5','col-lg-11')
+          this.innerStyles[1]='text-center, lead'
+          break
       case 'Instruction':
         this.collapse=false
         this.headerText=``
@@ -236,6 +240,25 @@ md.use(container, 'Intro', {
     if (tokens[idx].nesting === 1) {  
       args = strip(tokens[idx].info.trim().match(/^Intro(.*)$/)[1])
       let intro=new Card("Intro", args[0].replace(/[^a-zA-Z0-9]/g,''))
+      intro.headerText=args[0]
+      intro.footerText=(args.slice(1).length ? Full(args.slice(1)) : null)
+      intro.publishCard()
+      return DIVHEAD.pop()
+    } else {
+      return DIVFOOT.pop()
+    }
+  }
+})
+
+
+///Quote////
+md.use(container, 'Quote', {  
+  // Input Format is:
+  // Intro (Heading Line|material 1 --- comment|material 2 --- comment| ...)
+  render: function (tokens, idx) {   
+    if (tokens[idx].nesting === 1) {  
+      args = strip(tokens[idx].info.trim().match(/^Quote(.*)$/)[1])
+      let intro=new Card("Quote", args[0].replace(/[^a-zA-Z0-9]/g,''))
       intro.headerText=args[0]
       intro.footerText=(args.slice(1).length ? Full(args.slice(1)) : null)
       intro.publishCard()
@@ -785,7 +808,7 @@ function contacts(kind) {
         <div id ="Contact${kind}" class="accordion accordion-flush card col-card Contact col-md-8 my-3 p-0" >
           <div class="accordion-item"> 
             <span class="my-0 accordion-header">
-              <button class="accordion-button collapsed bg-CQ-navy text-CQ-orange" type="button" data-bs-toggle="collapse" data-bs-target="#Contact-${kind}" aria-expanded="false" aria-controls="Contact-${kind}">
+              <button class="accordion-button collapsed bg-KP-navy text-KP-orange" type="button" data-bs-toggle="collapse" data-bs-target="#Contact-${kind}" aria-expanded="false" aria-controls="Contact-${kind}">
                <div class="card-but"> Contact ${kind} of this Course</div>
               </button>
             </span>
@@ -826,7 +849,7 @@ function contacts(kind) {
         <div class="card-body">
           <span class="card-title">${e["first-name"] + ' ' + e["last-name"]}
           <small class='text-muted'>${e["pronouns"]}</small>
-                  <small class="badge bg-CQ-navy address">${e["email"].replace('@','&commat;')}</small>
+                  <small class="badge bg-KP-navy address">${e["email"].replace('@','&commat;')}</small>
           </span>
           <ul class="list-inline p-0 m-0 ">
           
@@ -948,7 +971,7 @@ function full(args) {
   let obj, deet
 
   let list = `
-     <ul class="list-inline Full px-1 py-0 mb-3 " ; border-bottom: 1px solid var(--bs-CQ-lightgray)'>
+     <ul class="list-inline Full px-1 py-0 mb-3 " ; border-bottom: 1px solid var(--bs-KP-lightgray)'>
       <li class="list-inline-item align-middle">
 
       </li>  
@@ -979,7 +1002,7 @@ function quizzy(args,ref) {
     KATEXMAP.set(katex_key, deet)
     // console.log(obj, deet)
     inner += `<li class="list-group-item align-middle py-1 ">
-              <a tabindex="0"  role="button" class="btn btn-CQ-navy position-relative quizlet" 
+              <a tabindex="0"  role="button" class="btn btn-KP-navy position-relative quizlet" 
                 id= '${ref}_ans_${i}'
                 aria-pressed="false" autocomplete="off" data-modify="${ref}_answer" data-result="${deet}">
                 ${obj} 
